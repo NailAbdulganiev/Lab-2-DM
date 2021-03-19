@@ -118,11 +118,9 @@ function cososimm() {
 	
 	for (var i = 0; i < n; i++){				
 		for (var j = 0; j < n; j++){
-			if(i != j) {
-				if(!(arr2[i][j] != arr2[j][i])) {
+				if(arr2[i][j] != -(arr2[j][i])) {
 					flag = false;
-				}
-			}			
+				}			
 		}	
 	}
 	
