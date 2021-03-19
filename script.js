@@ -50,19 +50,19 @@ function ref() {
 	var arr = document.getElementsByClassName("cell");
 
 	var k = 0;
-	var con = true;
+	var flag = true;
 	for (var i = 0; i < n; i++){
 		for (var j = 0; j < n; j++){
 			if(i == j) {
 				if(arr[k].value != 1) {
-					con = false;
+					flag = false;
 				}				
 			}
 			k++;
 		}	
 	}
 	
-	if(con) {
+	if(flag) {
 		document.getElementById('ref').innerHTML = 'Рефлексивно';
 	}
 	else {
@@ -75,7 +75,7 @@ function simm() {
 	var arr = document.getElementsByClassName("cell");
 
 	var k = 0;
-	var con = true;
+	var flag = true;
 	var arr2 = [];
 	for (var i = 0; i < n; i++){
 		arr2[i] = [];
@@ -88,12 +88,12 @@ function simm() {
 	for (var i = 0; i < n; i++){
 		for (var j = 0; j < n; j++){
 			if(!(arr2[i][j] == arr2[j][i])) {
-				con = false;
+				flag = false;
 			}
 		}	
 	}
 	
-	if(con) {
+	if(flag) {
 		document.getElementById('simm').innerHTML = 'Симметрично';
 	}
 	else {
@@ -106,7 +106,7 @@ function cososimm() {
 	var arr = document.getElementsByClassName("cell");
 
 	var k = 0;
-	var con = true;
+	var flag = true;
 	var arr2 = [];
 	for (var i = 0; i < n; i++){
 		arr2[i] = [];
@@ -120,17 +120,17 @@ function cososimm() {
 		for (var j = 0; j < n; j++){
 			if(i != j) {
 				if(!(arr2[i][j] != arr2[j][i])) {
-					con = false;
+					flag = false;
 				}
 			}			
 		}	
 	}
 	
-	if(con) {
-		document.getElementById('antisimm').innerHTML = 'Кососимметрично';
+	if(flag) {
+		document.getElementById('cososimm').innerHTML = 'Кососимметрично';
 	}
 	else {
-		document.getElementById('antisimm').innerHTML = 'Не является кососимметричным';
+		document.getElementById('cososimm').innerHTML = 'Не является кососимметричным';
 	}
 }
 
@@ -139,7 +139,7 @@ function trans() {
 	var arr = document.getElementsByClassName("cell");
 
 	var k = 0;
-	var con = true;
+	var flag = true;
 	var arr2 = [];
 	var kv = [];						//перевод в двумерный массив
 	for (var i = 0; i < n; i++){
@@ -166,12 +166,12 @@ function trans() {
 	for (var i = 0; i < n; i++){		//если единиц в квадрате матрицы больше, то нетранзитивно
 		for (var j = 0; j < n; j++){
 			if (arr2[i][j] < kv[i][j]) {
-				con = false;
+				flag = false;
 			}				
 		}		
 	}	
 	
-	if(con) {
+	if(flag) {
 		document.getElementById('trans').innerHTML = 'Транзитивно';
 	}
 	else {
