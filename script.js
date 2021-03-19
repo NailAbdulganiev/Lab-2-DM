@@ -19,7 +19,7 @@ function createMatrix() {
 
 }
 
-function check() {
+function validation() {
 	var n = document.getElementById("n").value;
 	var arr = document.getElementsByClassName("cell");
 	
@@ -101,7 +101,7 @@ function simm() {
 	}
 }
 
-function antisimm() {
+function cososimm() {
 	var n = document.getElementById("n").value;
 	var arr = document.getElementsByClassName("cell");
 
@@ -179,10 +179,10 @@ function trans() {
 	}
 }
 
-function getRelations() {
-	check();
+function properties() {
+	validation();
 	ref();
 	simm();
-	antisimm();
+	cososimm();
 	trans();
 }
